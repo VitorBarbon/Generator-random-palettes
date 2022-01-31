@@ -44,7 +44,7 @@ function createRandomPalettes() {
 
   function getSelectValue() {
     const selectValue = document.querySelector('#select-palette');
-    console.log(selectValue.value);
+    // console.log(selectValue.value);
     if(selectValue.value === '0') return getRandomInt(0, 255);
     if(selectValue.value === '1') return getRandomInt(0, 127); 
     if(selectValue.value === '2') return getRandomInt(127, 255);
@@ -55,7 +55,7 @@ function createRandomPalettes() {
   function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
-    console.log(Math.floor(Math.random() * (max - min)) + min);
+    // console.log(Math.floor(Math.random() * (max - min)) + min);
     return Math.floor(Math.random() * (max - min)) + min;
   }
 }
