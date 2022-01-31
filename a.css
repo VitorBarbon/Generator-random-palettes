@@ -8,10 +8,9 @@
 
 body {
   display: flex;
-  justify-content: flex-start;
   flex-direction: column;
   background-color: #FFFFFE;
-  width: 100vw;
+  height: 100vh;
 }
 
 header {
@@ -86,11 +85,6 @@ header .navbar .navbar-links .navbar-item a {
   height: 30px;
   padding: 10px;
 }
-.form #select-palette {
-  width: 90%;
-  height: 30px;
-  margin-top: 20px;
-}
 
 .btn {
   width: 130px;
@@ -102,35 +96,13 @@ header .navbar .navbar-links .navbar-item a {
   margin-top: 10px;
 }
 
-.buttonReset {
-  background-color: #b86037;
-}
-
-.buttonSelect {
-  background-color: #548625;
-}
-
-.divPalette {
+.palette-container {
   position: relative;
   width: 85%;
-  height: 50px;
+  height: 100px;
   margin: 10px auto;
   background-color: #030d1d;
   display: flex;
-}
-
-footer {
-  position: absolute;
-  bottom: 0;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  width: 100%;
-  background-color: #030d1d;
-  padding: 40px 0;
-}
-footer a {
-  color: #FFFFFF;
 }
 
 button:hover {
@@ -138,33 +110,8 @@ button:hover {
   opacity: 0.8;
 }
 
-.borderPalettes {
-  border: 2px solid #000000;
-}
-
-.colorSelect {
-  display: flex;
-  flex-direction: column;
-  height: 350px;
-  margin-bottom: 10px;
-}
-.colorSelect .divColor {
-  width: 300px;
-}
-
-.divContainerPalette {
+#select-palette {
   width: 90%;
-  height: 350px;
-  top: 100px;
-  margin: 20px auto;
+  height: 30px;
+  margin-top: 20px;
 }
-.divContainerPalette ~ .btnBack {
-  position: absolute;
-  left: 50%;
-  right: 50%;
-  transform: translateX(-50%);
-  width: 200px;
-  height: 40px;
-}
-
-/*# sourceMappingURL=style.css.map */
