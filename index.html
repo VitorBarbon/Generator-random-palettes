@@ -28,7 +28,7 @@
           <a class="navbar-item-link" href="/">Home</a>
         </li>
         <li class="navbar-item">
-          <a class="navbar-item-link" href="https://github.com/VitorBarbon">My GitHub</a>
+          <a class="navbar-item-link" href="https://github.com/VitorBarbon">GitHub</a>
         </li>
         <li class="navbar-item">
           <a class="navbar-item-link" href="mailto:dev.vitorbarbon@gmail.com">Contact</a>
@@ -42,7 +42,13 @@
       <form class="form">
         <span class="title-input">Quantidade de cores: </span>
         <input type="number" min="4" max="7" value="4" id="colors-amount" placeholder="Quantidade de cores: ">
-
+        <select name="type-palette" id="select-palette">
+          <option value="0">Paleta Aleatória</option>
+          <option value="1">Paleta escura</option>
+          <option value="2">Paleta clara</option>
+          <option value="3">Paleta muito escura</option>
+          <option value="4">Paleta muito clara</option>
+        </select>
         <button type="submit" class="btn-palettes" id="submit-palettes">Gerar Paletas</button>
       </form>
     </section>
@@ -53,6 +59,6 @@
   </main>
   
   <script src="./js/palettes.js"></script>
-  <script src="./js/index.js"></script>
+  <script src="./js/main.js"></script>
 </body>
 </html>

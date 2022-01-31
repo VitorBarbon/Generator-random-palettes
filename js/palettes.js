@@ -22,7 +22,7 @@ function createRandomPalettes() {
       paletteDiv.appendChild(divColor);
     }
   }
-
+ 
   function randomBgColor() {
     const num1 = generateRandomNum();
     const num2 = generateRandomNum();
@@ -32,7 +32,7 @@ function createRandomPalettes() {
   }
 
   function generateRandomNum() {
-    const randomNum = Math.floor(Math.random() * 255);
+    const randomNum = getSelectValue();
     return randomNum;
   }
 
@@ -40,7 +40,23 @@ function createRandomPalettes() {
     e.preventDefault();
     const palette = createPalette();
     createDivColors(getValueInputColor(), palette);
+  });
 
-  })
+  function getSelectValue() {
+    const selectValue = document.querySelector('#select-palette');
+    console.log(selectValue.value);
+    if(selectValue.value === '0') return getRandomInt(0, 255);
+    if(selectValue.value === '1') return getRandomInt(0, 127); 
+    if(selectValue.value === '2') return getRandomInt(127, 255);
+    if(selectValue.value === '3') return getRandomInt(0, 80);
+    if(selectValue.value === '4') return getRandomInt(175, 255);
+  }
+
+  function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    console.log(Math.floor(Math.random() * (max - min)) + min);
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
 }
 createRandomPalettes()

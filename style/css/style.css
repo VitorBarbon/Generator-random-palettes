@@ -109,4 +109,10 @@ button:hover {
   cursor: pointer;
   opacity: 0.8;
 }
+
+#select-palette {
+  width: 90%;
+  height: 30px;
+  margin-top: 20px;
+}
 /*# sourceMappingURL=style.css.map */
