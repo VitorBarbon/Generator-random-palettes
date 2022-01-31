@@ -8,9 +8,10 @@
 
 body {
   display: flex;
+  justify-content: flex-start;
   flex-direction: column;
   background-color: #FFFFFE;
-  height: 100vh;
+  width: 100vw;
 }
 
 header {
@@ -114,19 +115,20 @@ header {
 }
 
 .divPalette {
-  margin-top: 12px;
-  width: 90%;
+  position: relative;
+  width: 85%;
   height: 50px;
   margin: 10px auto;
-  background-color: red;
+  background-color: #030d1d;
   display: flex;
 }
 
 footer {
+  position: absolute;
+  bottom: 0;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  margin-top: auto;
   width: 100%;
   background-color: #030d1d;
   padding: 40px 0;
@@ -139,4 +141,35 @@ footer {
 button:hover {
   cursor: pointer;
   opacity: .8;
+}
+
+.borderPalettes {
+  border: 2px solid #000000;
+}
+
+.colorSelect {
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  margin-bottom: 10px;
+
+  .divColor {
+    width: 300px;
+  }
+}
+
+.divContainerPalette {
+  width:90%;
+  height: 350px;
+  top: 100px;
+  margin: 20px auto;
+
+  &~.btnBack {
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 40px;
+  }
 }

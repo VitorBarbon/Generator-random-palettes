@@ -7,22 +7,17 @@
   <title>Random Palettes | for artist</title>
   <link rel="stylesheet" href="./style/css/style.css">
   <link rel='stylesheet' href='https://pro.fontawesome.com/releases/v5.10.0/css/all.css' integrity='sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p' crossorigin='anonymous'/>
-  <script src='https://code.jquery.com/jquery-3.6.0.min.js' integrity='sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=' crossorigin='anonymous'></script>
-  <script src="./js/palettes.js"></script>
-  <script src="./js/index.js"></script>
-  <!-- <link rel="stylesheet" href="./style/css/style.css"> -->
-
+  <link rel="stylesheet" href="./style/css/style.css">
+  
 </head>
 <body>
   
   <header>
     <nav class="navbar">
       <div class="logo">
-        <a class="logo-link" href="/">Random Palettes
-          <!-- <img src="" class="logo-image" alt="Logo Random Palettes"> -->
-        </a><!-- Luka vai fazer uma logo pra mim -->
+        <a class="logo-link" href="/">Random Palettes</a>
       </div>
-
+      
       <div>
         <button class="hamburguer" id="button-menu">
           <i class="fas fa-bars"></i>
@@ -41,25 +36,23 @@
       </ul>
     </nav>
   </header>
-
+  
   <main id="main-page">
     <section class="form-content">
       <form class="form">
         <span class="title-input">Quantidade de cores: </span>
         <input type="number" min="4" max="7" value="4" id="colors-amount" placeholder="Quantidade de cores: ">
 
-        <button type="button" class="btn-palettes" id="submit-palettes">Gerar Paletas</button>
+        <button type="submit" class="btn-palettes" id="submit-palettes">Gerar Paletas</button>
       </form>
     </section>
-
+    
     <section id="palettes-content">
-
+      
     </section>
   </main>
-
-  <footer class="footer">
-    <p><a href="https://github.com/VitorBarbon">Vitor Barbon</a></p>
-  </footer>
   
+  <script src="./js/palettes.js"></script>
+  <script src="./js/index.js"></script>
 </body>
 </html>

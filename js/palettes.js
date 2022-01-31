@@ -1,61 +1,46 @@
-$(document).ready(() => {
-  $('#submit-palettes').on('click', () => {
-    let xmlHttp = new XMLHttpRequest();
-    let valueInputPalette = $('#palettes-amount').val();
-    let valueInputColor = $('#colors-amount').val();
-    let amountColors = valueInputColor * 4;
-    let random = Math.random() * 99;
-    let randomInt = Math.round(random);
-    console.log(randomInt)
-    let url = 'https://www.colr.org/json/colors/random/' + (randomInt);
-    console.log(url)
-    xmlHttp.open('GET', url);
-    xmlHttp.onreadystatechange = () => {
-      if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+function createRandomPalettes() {
+  const formPalettes = document.querySelector('.form');
+  const sectionPalettes = document.querySelector('#palettes-content');
 
-        let JSONColors = xmlHttp.responseText
-        let objJSONColors = JSON.parse(JSONColors);
+  function createPalette() {
+    const palette = document.createElement('div');
+    palette.classList.add('palette-container')
+    return sectionPalettes.appendChild(palette);
+  }
 
-        // laço de repetição que cria o número de paletas conforme value do input
-        for (let i = 0; i < 1; i++) {
+  function getValueInputColor() {
+    const valueInputColor = document.querySelector('#colors-amount');
+    return valueInputColor.value;
+  }
 
-          let divPalette = document.createElement('div');
-          $(divPalette).addClass('divPalette');
-
-          for (let c = 0; c < valueInputColor; c++) {
-            let divColor = document.createElement('div');
-            $(divColor).css({
-              'width': 100 / valueInputColor + '%',
-              'height': '100%',
-              'background-color': '#' + objJSONColors.colors[c].hex,
-            });
-
-            $(divPalette).append(divColor);
-          }
-
-          $('#palettes-content').append(divPalette);
-        }
-
-        // cria botões
-        $('.divButtons').remove('');
-        $('#palettes-content').append('<div class="divButtons"><button class="buttonReset btn" /><button class="buttonSelect btn" /></div>')
-        $('.divButtons').css({
-          'display': 'flex',
-          'width': '100%',
-          'height': '100px',
-          'justify-content': 'center',
-          'align-items': 'center',
-          'gap': '20px',
-        });
-
-        $('.buttonReset').html('Resetar paletas').attr('id', 'reset')
-        $('.buttonSelect').html('Selecionar Paletas');
-
-        $('.buttonReset').on('click', () => {
-          $('#palettes-content').html('')
-        });
-      }
+  function createDivColors(numColors, paletteDiv) {
+    for (let i = 0; i <= numColors - 1; i++) {
+      const divColor = document.createElement('div');
+      const colorBg = randomBgColor();
+      divColor.style.backgroundColor = colorBg;
+      divColor.style.width = (100 / numColors) + '%';
+      paletteDiv.appendChild(divColor);
     }
-    xmlHttp.send()
+  }
+
+  function randomBgColor() {
+    const num1 = generateRandomNum();
+    const num2 = generateRandomNum();
+    const num3 = generateRandomNum();
+
+    return `rgb(${num1}, ${num2}, ${num3})`;
+  }
+
+  function generateRandomNum() {
+    const randomNum = Math.floor(Math.random() * 255);
+    return randomNum;
+  }
+
+  formPalettes.addEventListener('submit', e => {
+    e.preventDefault();
+    const palette = createPalette();
+    createDivColors(getValueInputColor(), palette);
+
   })
-})
+}
+createRandomPalettes()
