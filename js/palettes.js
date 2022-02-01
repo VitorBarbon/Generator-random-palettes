@@ -1,10 +1,13 @@
-function createRandomPalettes() {
+function createRandomPalettes(func) {
   const formPalettes = document.querySelector('.form');
   const sectionPalettes = document.querySelector('#palettes-content');
 
+  const createButton = func;
+
   function createPalette() {
+    createButton();
     const palette = document.createElement('div');
-    palette.classList.add('palette-container')
+    palette.classList.add('palette-container');
     return sectionPalettes.appendChild(palette);
   }
 
@@ -17,7 +20,6 @@ function createRandomPalettes() {
     for (let i = 0; i <= numColors - 1; i++) {
       const divColor = document.createElement('div');
       const colorBg = randomBgColor();
-      console.log(colorBg);
       divColor.style.backgroundColor = colorBg;
       divColor.style.width = (100 / numColors) + '%';
       paletteDiv.appendChild(divColor);
@@ -36,12 +38,6 @@ function createRandomPalettes() {
     return randomNum;
   }
 
-  formPalettes.addEventListener('submit', e => {
-    e.preventDefault();
-    const palette = createPalette();
-    createDivColors(getValueInputColor(), palette);
-  });
-
   function getSelectValue() {
     const selectValue = document.querySelector('#select-palette');
     if (selectValue.value === '0') return getRandomInt(0, 255);
@@ -56,5 +52,21 @@ function createRandomPalettes() {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min)) + min;
   }
+
+  formPalettes.addEventListener('submit', e => {
+    e.preventDefault();
+    const palette = createPalette();
+    createDivColors(getValueInputColor(), palette);
+  });
 }
-createRandomPalettes()
+createRandomPalettes(createButton)
+
+function createButton() {
+  const divButtonReset = document.querySelector('.reset');
+  if (divButtonReset.innerHTML === '') {
+    const buttonReset = document.createElement('button');
+    buttonReset.classList.add('button-reset');
+    buttonReset.innerText = 'Resetar Paletas'
+    return divButtonReset.appendChild(buttonReset);
+  }
+}
