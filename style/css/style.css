@@ -10,7 +10,7 @@ body {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  background-color: #FFFFFE;
+  background-color: #f5f7fa;
   width: 100vw;
 }
 
@@ -37,7 +37,10 @@ header .navbar .hamburguer {
   background-color: transparent;
   border: none;
   color: #FFFFFF;
-  z-index: 100;
+  z-index: 250;
+}
+header .navbar .hamburguer .fa-times {
+  font-size: 32px;
 }
 header .navbar .navbar-links-hidden {
   display: none;
@@ -53,13 +56,14 @@ header .navbar .navbar-links {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 30px;
-  align-items: center;
   background-color: #030d1d;
+  gap: 50px;
+  align-items: center;
+  z-index: 200;
 }
-header .navbar .navbar-links .navbar-item a {
+header .navbar .navbar-links .navbar-item-link {
   color: #FFFFFF;
-  font-size: 26px;
+  font-size: 32px;
 }
 
 .form {
@@ -120,6 +124,25 @@ button:hover {
   border-radius: 5px;
   margin-top: 10px;
   margin-bottom: 30px;
+}
+
+@media (min-width: 820px) {
+  header {
+    margin-bottom: 20px;
+  }
+  header .navbar .hamburguer {
+    opacity: 0;
+    visibility: hidden;
+  }
+  header .navbar .navbar-links-hidden {
+    display: flex;
+    width: 400px;
+    justify-content: space-around;
+  }
+  header .navbar .navbar-links-hidden .navbar-item-link {
+    color: #FFFFFF;
+    font-size: 18px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
