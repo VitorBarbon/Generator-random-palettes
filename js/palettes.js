@@ -21,7 +21,6 @@
       const divColor = document.createElement('div');
       const colorBg = randomBgColor();
       divColor.style.backgroundColor = colorBg;
-      divColor.style.width = (100 / numColors) + '%';
       paletteDiv.appendChild(divColor);
     }
   }

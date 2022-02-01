@@ -18,8 +18,10 @@
         color[0] = Number(color[0]);
         color[1] = Number(color[1]);
         color[2] = Number(color[2]);
-        itemColor.innerText = ConvertRGBtoHex(color[0], color[1], color[2]);
+        const hex = ConvertRGBtoHex(color[0], color[1], color[2]);
+        itemColor.innerHTML = `<p>${hex}</p>`
         itemColor.classList.add('hidden-text');
+        itemColor.style.color = "rgb(255,255, 255)";
       }
 
       function getValueHex() {
