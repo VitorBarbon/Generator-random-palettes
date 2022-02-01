@@ -1,7 +1,6 @@
 const ulNav = document.querySelector('ul');
 const buttonOpen = document.querySelector('.fas');
 
-
 document.addEventListener('click', e => {
   const el = e.target;
   const containerPalette = document.getElementById('palettes-content');

@@ -1,8 +1,8 @@
-function createRandomPalettes(func) {
+(function (callback) {
   const formPalettes = document.querySelector('.form');
   const sectionPalettes = document.querySelector('#palettes-content');
 
-  const createButton = func;
+  const createButton = callback;
 
   function createPalette() {
     createButton();
@@ -58,8 +58,7 @@ function createRandomPalettes(func) {
     const palette = createPalette();
     createDivColors(getValueInputColor(), palette);
   });
-}
-createRandomPalettes(createButton)
+})(createButton)
 
 function createButton() {
   const divButtonReset = document.querySelector('.reset');

@@ -1,16 +1,43 @@
-function ColorToHex(color) {
-  var hexadecimal = color.toString(16);
-  return hexadecimal.length == 1 ? "0" + hexadecimal : hexadecimal;
-}
+(function () {
 
-function ConvertRGBtoHex(red, green, blue) {
-  return "#" + ColorToHex(red) + ColorToHex(green) + ColorToHex(blue);
-}
-console.log(ConvertRGBtoHex(255, 100, 200));
-//código RGB(255, 100, 200);
+  const btnCreatePalette = document.querySelector('.btn-palettes');
 
-// var hex = "#ff64c8";
-// var red = parseInt(hex[1]+hex[2],16);
-// var green = parseInt(hex[3]+hex[4],16);
-// var blue = parseInt(hex[5]+hex[6],16);
-// console.log(red,green,blue);
+  btnCreatePalette.addEventListener('click', () => {
+    setTimeout(() => {
+      let arrDivPalette = document.querySelectorAll('.palette-container');
+
+      for (divPalette of arrDivPalette) {
+        let divColors = divPalette.querySelectorAll('div');
+        for (itemColor of divColors) {
+          setTextHex()
+        }
+      }
+
+      function setTextHex() {
+        const color = getValueHex()
+        color[0] = Number(color[0]);
+        color[1] = Number(color[1]);
+        color[2] = Number(color[2]);
+        itemColor.innerText = ConvertRGBtoHex(color[0], color[1], color[2]);
+        itemColor.classList.add('hidden-text');
+      }
+
+      function getValueHex() {
+        let stylesDivColor = getComputedStyle(itemColor);
+        let color = stylesDivColor.backgroundColor;
+        color = color.replace('rgb(', '').replace(')', '');
+        color = color.split(', ');
+        return color
+      }
+    }, 10);
+  })
+
+  function ColorToHex(color) {
+    var hexadecimal = color.toString(16);
+    return (hexadecimal.length == 1 ? "0" + hexadecimal : hexadecimal).toUpperCase();;
+  }
+
+  function ConvertRGBtoHex(red, green, blue) {
+    return "#" + ColorToHex(red) + ColorToHex(green) + ColorToHex(blue);
+  }
+})();

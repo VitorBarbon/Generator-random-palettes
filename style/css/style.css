@@ -144,5 +144,9 @@ button:hover {
     font-size: 18px;
   }
 }
+.hidden-text {
+  font-size: 12px;
+  color: #000000;
+}
 
 /*# sourceMappingURL=style.css.map */
