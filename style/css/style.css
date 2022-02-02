@@ -116,11 +116,19 @@ button:hover {
   position: relative;
   height: 100%;
 }
+.select .hidden-text i {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  margin-left: -9px;
+  font-size: 18px;
+}
 .select .hidden-text p {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
-  font-size: 12px;
+  bottom: 25%;
+  left: 50%;
+  margin-left: -35px;
+  font-size: 18px;
 }
 
 .palette-container {
@@ -130,9 +138,14 @@ button:hover {
   margin: 10px auto;
   background-color: #030d1d;
   display: flex;
+  cursor: pointer;
 }
 .palette-container .hidden-text {
   width: 100%;
+}
+.palette-container .hidden-text i {
+  opacity: 0;
+  visibility: hidden;
 }
 .palette-container .hidden-text p {
   display: none;
@@ -170,6 +183,44 @@ button:hover {
   header .navbar .navbar-links-hidden .navbar-item-link {
     color: #FFFFFF;
     font-size: 18px;
+  }
+
+  .select {
+    position: absolute;
+    top: 80px;
+    left: 5%;
+    width: 90%;
+    height: 87%;
+    margin: 22px auto;
+    background-color: #030d1d;
+    display: flex;
+    flex-direction: row;
+    z-index: 300;
+  }
+  .select .hidden-text {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+  }
+  .select .hidden-text div {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: 100px;
+  }
+  .select .hidden-text div i {
+    position: absolute;
+    top: -350px;
+    font-size: 24px;
+    margin-left: 0.5px;
+  }
+  .select .hidden-text div p {
+    font-size: 32px;
+    width: 10px;
+    word-wrap: break-word;
+    margin-left: 0;
   }
 }
 .hidden-text {
