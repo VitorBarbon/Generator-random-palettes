@@ -1,6 +1,6 @@
 # Generator-random-palettes
 
-<img src="https://github.com/VitorBarbon/Generator-random-palettes/issues/1#issue-1139998600"/>
+![paleta](https://user-images.githubusercontent.com/88788433/154270532-8973b907-b28f-4d65-9df4-29b5dd9df0c5.png)
 
 Gerador de paletas aleatórias sem critério estético, visando criar paletas conforme as opções disponibilizadas onde o usuário pode filtrar a quantidade de cores em uma paleta ou escolher tons aproximados como escuros, claros, tons aleatórios, muito escuros, etc.
 
