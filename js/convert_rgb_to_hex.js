@@ -15,12 +15,10 @@
 
       function setTextHex() {
         const color = getValueHex()
-        console.log(color);
         color[0] = Number(color[0]);
         color[1] = Number(color[1]);
         color[2] = Number(color[2]);
         const hex = ConvertRGBtoHex(color[0], color[1], color[2]);
-        const buttonEdit = createButtonsEdit()
         itemColor.innerHTML = `<div><p>${hex}</p></div>`
         itemColor.classList.add('hidden-text');
       }
@@ -34,16 +32,6 @@
       }
     }, 10);
   })
-
-  function createButtonsEdit() {
-    const buttonEdit = document.createElement('button');
-    const iconEdit = document.createElement('i');
-    iconEdit.classList.add('fas');
-    iconEdit.classList.add('fa-edit');
-    buttonEdit.classList.add('buttonEdit');
-    buttonEdit.appendChild(iconEdit);
-    return buttonEdit;
-  }
 
   function ColorToHex(color) {
     var hexadecimal = color.toString(16);

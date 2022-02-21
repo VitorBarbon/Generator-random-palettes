@@ -57,7 +57,7 @@
     const palette = createPalette();
     createDivColors(getValueInputColor(), palette);
   });
-})(createButton)
+})(createButton);
 
 function createButton() {
   const divButtonReset = document.querySelector('.reset');

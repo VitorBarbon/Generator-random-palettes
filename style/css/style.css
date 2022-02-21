@@ -90,6 +90,7 @@ header .navbar .navbar-links .navbar-item-link {
   height: 30px;
   padding: 10px;
 }
+
 .form #select-palette {
   width: 90%;
   height: 30px;
@@ -116,6 +117,7 @@ button:hover {
   position: relative;
   height: 100%;
 }
+
 .select .hidden-text i {
   position: absolute;
   top: 30%;
@@ -123,6 +125,7 @@ button:hover {
   margin-left: -9px;
   font-size: 18px;
 }
+
 .select .hidden-text p {
   position: absolute;
   bottom: 25%;
