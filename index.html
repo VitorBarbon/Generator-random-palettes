@@ -13,7 +13,7 @@
 
 </head>
 
-<body onresize="removeMenuHamburguer()">
+<body>
   <header>
     <nav class="navbar">
       <div class="logo">
@@ -27,7 +27,7 @@
       </div>
       <ul class="navbar-links-hidden" id="menu">
         <li class="navbar-item">
-          <a class="navbar-item-link" href="/">Home</a>
+          <a class="navbar-item-link" href="https://vitorbarbon.github.io/Generator-random-palettes/">Home</a>
         </li>
         <li class="navbar-item">
           <a class="navbar-item-link" href="https://github.com/VitorBarbon">GitHub</a>
@@ -43,14 +43,15 @@
     <section class="form-content">
       <form class="form">
         <span class="title-input">Quantidade de cores: </span>
-        <input type="number" min="4" max="7" value="4" id="colors-amount" placeholder="Quantidade de cores: ">
+        <input type="number" value="4" id="colors-amount" placeholder="Quantidade de cores: ">
         
         <select name="type-palette" id="select-palette">
-          <option value="0">Paleta Aleatória</option>
-          <option value="1">Paleta escura</option>
-          <option value="2">Paleta clara</option>
-          <option value="3">Paleta muito escura</option>
-          <option value="4">Paleta muito clara</option>
+          <option value="0" selected>--selecione--</option>
+          <option value="1">Paleta Aleatória</option>
+          <option value="2">Paleta escura</option>
+          <option value="3">Paleta clara</option>
+          <option value="4">Paleta muito escura</option>
+          <option value="5">Paleta muito clara</option>
         </select>
         
         <button type="submit" class="btn-palettes" id="submit-palettes">Gerar Paleta</button>
@@ -62,11 +63,12 @@
     </section>
     <div class="reset"></div>
   </main>
-
-  <script src="./js/convert_rgb_to_hex.js"></script>
+  
+  <script src="./assets/js/createPalette.js"></script>
+  <!-- <script src="./js/convert_rgb_to_hex.js"></script>
   <script src="./js/palettes.js"></script>
   <script src="./js/events.js"></script>
-  <script src="./js/select_palette.js"></script>
+  <script src="./js/select_palette.js"></script> -->
 </body>
 
 </html>

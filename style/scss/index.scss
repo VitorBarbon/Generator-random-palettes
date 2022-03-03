@@ -114,7 +114,7 @@ button:hover {
 
 .select {
   position: absolute;
-  top: 80px;
+  top: 90px;
   left: 5%;
   width: 90%;
   height: 80%;
@@ -123,17 +123,14 @@ button:hover {
   display: flex;
   flex-direction: column;
 
+  .c-palette__color {
+    width: 100%;
+    height: 100%;
+  }
+
   .hidden-text {
     position: relative;
     height: 100%;
-
-    i {
-      position: absolute;
-      top: 30%;
-      left: 50%;
-      margin-left: -9px;
-      font-size: 18px;
-    }
 
     p {
       position: absolute;
@@ -145,7 +142,7 @@ button:hover {
   }
 }
 
-.palette-container {
+.c-palette {
   position: relative;
   width: 85%;
   height: 100px;
@@ -154,12 +151,13 @@ button:hover {
   display: flex;
   cursor: pointer;
 
+  .c-palette__color {
+    width: 100%;
+  }
+
   .hidden-text {
     width: 100%;
-    i {
-      opacity: 0;
-      visibility: hidden;
-    }
+  
     p {
       display: none;
     }
@@ -188,7 +186,6 @@ button:hover {
     margin-bottom: 20px;
 
     .navbar {
-
       .hamburguer {
         opacity: 0;
         visibility: hidden;
@@ -252,4 +249,11 @@ button:hover {
 
 .hidden-text {
   font-size: 12px;
+}
+
+.error-text {
+  width: 90%;
+  margin-top: 10px;
+  text-align: start;
+  color: red;
 }
